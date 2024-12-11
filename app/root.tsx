@@ -31,7 +31,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="min-h-screen">
+        <h1 className="font-extrabold text-3xl p-4">
+          🎶 Fun Unique Music App 🎶
+        </h1>
         {children}
         <ScrollRestoration />
         <Scripts />
