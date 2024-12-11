@@ -18,8 +18,8 @@ export default function ArtistsPage() {
         {artists.map((a) => (
           <li key={a.ArtistId} className="flex gap-4">
             <span className="font-bold">{a.Name}</span>{" "}
-            <Link className="link" to={`/artists/${a.ArtistId}/albums`}>
-              See albums
+            <Link className="link" to={`/artists/${a.ArtistId}`}>
+              See details
             </Link>
           </li>
         ))}

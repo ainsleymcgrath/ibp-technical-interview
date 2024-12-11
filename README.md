@@ -1,40 +1,20 @@
-# Welcome to Remix!
+# Welcome to the IBP Interview!
 
-- 📖 [Remix docs](https://remix.run/docs)
+This is a little music app.
 
-## Development
+It uses Remix, Tailwind (+ DaisyUI), and SQLite.
 
-Run the dev server:
+There is already a SQLite database populated with [this](https://www.sqlitetutorial.net/sqlite-sample-database/).
 
-```shellscript
-npm run dev
-```
+## What the app does now
 
-## Deployment
+- List artists
+- Link you to an artist detail page that shows their albums
 
-First, build your app for production:
 
-```sh
-npm run build
-```
 
-Then run the app in production mode:
+## What we need
 
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying Node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-- `build/server`
-- `build/client`
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever css framework you prefer. See the [Vite docs on css](https://vitejs.dev/guide/features.html#css) for more information.
+- Show actual album detail--the dev who started this only shows the album names
+- Add some interesting summary info about the artists' music, leveraging more of what's in the DB.
+- Once that's done, anything else you want!
