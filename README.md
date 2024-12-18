@@ -11,10 +11,15 @@ There is already a SQLite database populated with [this](https://www.sqlitetutor
 - List artists
 - Link you to an artist detail page that shows their albums
 
-
-
 ## What we need
 
-- Show actual album detail--the dev who started this only shows the album names
-- Add some interesting summary info about the artists' music, leveraging more of what's in the DB.
-- Once that's done, anything else you want!
+The developer who started this quit! They left `???`'s in production code. 🤦
+Notably, there are missing details in the artist page.
+
+- The genre(s) of each album
+- The number of tracks on each album
+- The actual list of tracks for each album
+
+## Always more to do...
+
+There are plenty of opportunities for improvement. If you see something, say something! You should leave this app better than you found it.
