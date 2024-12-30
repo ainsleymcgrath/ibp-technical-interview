@@ -1,4 +1,4 @@
-import { openDb } from "~/lib/db";
+import { getMany, getOne, openDb } from "~/lib/db";
 import { Artist } from "./artists._index";
 import { useLoaderData } from "@remix-run/react";
 import { LoaderFunctionArgs } from "@remix-run/node";
@@ -9,16 +9,18 @@ export type Album = { AlbumId: number; Title: string; ArtistId: number };
 
 export async function loader({ params }: LoaderFunctionArgs) {
   const db = await openDb();
-  const artist = await db.get<Artist>(
-    "SELECT * FROM artists WHERE ArtistId = ?",
-    params.artistId
+  const artist = await getOne<Artist>(
+    db,
+    "SELECT * FROM artists WHERE ArtistId = $artistId",
+    { $artistId: params.artistId }
   );
   if (!artist) {
     throw new Response("Artist not found", { status: 404 });
   }
-  const albums = await db.all<Album[]>(
-    "select * from albums where ArtistId = ?",
-    params.artistId
+  const albums = await getMany<Album>(
+    db,
+    "select * from albums where ArtistId = $artistId",
+    { $artistId: artist.ArtistId }
   );
   return { artist, albums };
 }
