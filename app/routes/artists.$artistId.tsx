@@ -3,8 +3,6 @@ import { Artist } from "./artists._index";
 import { useLoaderData } from "@remix-run/react";
 import { LoaderFunctionArgs } from "@remix-run/node";
 
-export type ArtistStats = { "???": unknown }; //TODO
-
 export type Album = { AlbumId: number; Title: string; ArtistId: number };
 
 export async function loader({ params }: LoaderFunctionArgs) {
@@ -45,7 +43,9 @@ function AlbumDetail(props: { album: Album }) {
       <span className="font-bold">Genres:</span> <span>???</span>
       {/* https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details */}
       <details>
-        <summary>There are ??? tracks on this album:</summary>
+        <summary>
+          There are <span className="font-bold">???</span> tracks on this album:
+        </summary>
         <ol>
           <li>???</li>
         </ol>
