@@ -23,8 +23,8 @@ export async function getOne<T extends AnyRecord>(
   params: AnyRecord
 ): Promise<T | undefined> {
   const result = await db.get<T>(sql, params);
-  if (!result) {
-    return undefined;
+  if (typeof result === "undefined") {
+    return result;
   }
   return maybeParseJsonFieldsInRow(result);
 }
